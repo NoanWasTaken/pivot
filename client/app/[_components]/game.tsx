@@ -55,7 +55,7 @@ export default function Game({ game }: { game: GameData }) {
       href={`https://www.protondb.com/app/${game.appid}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block border-2 border-muted bg-white transition hover:-translate-y-0.5 hover:border-celadon hover:shadow-md"
+      className="block border-2 border-muted bg-white"
     >
       <div className="relative aspect-460/215 bg-alice">
         {imgError ? (

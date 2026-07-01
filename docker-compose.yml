@@ -1,0 +1,24 @@
+services:
+  api:
+    build: ./server
+    container_name: pivot-api
+    restart: unless-stopped
+    networks:
+      - web
+    environment:
+      PORT: 3001
+
+  web:
+    build: ./client
+    container_name: pivot-web
+    restart: unless-stopped
+    networks:
+      - web
+    depends_on:
+      - api
+    environment:
+      PORT: 3000
+
+networks:
+  web:
+    external: true

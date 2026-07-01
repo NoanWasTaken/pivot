@@ -76,14 +76,35 @@ export default function Check() {
       }
       setGames(responseData);
     } catch {
-      setError("Network error. Is the server running?");
+      setError(
+        "Network error. Please contact the website owner if the problem persists.",
+      );
     } finally {
       setLoader(false);
     }
   };
 
   const hasContent = games.length > 0 || loader || error;
-
+  const pctRef = React.useRef<HTMLSpanElement>(null);
+  React.useEffect(() => {
+    if (games.length === 0 || !pctRef.current) return;
+    pctRef.current.textContent = "0.0%";
+    const from = 0;
+    const to = playableGamesPercentage;
+    const duration = 800;
+    const start = performance.now();
+    let frameId: number;
+    function tick(now: number) {
+      const elapsed = now - start;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const current = from + (to - from) * eased;
+      if (pctRef.current) pctRef.current.textContent = current.toFixed(1) + "%";
+      if (t < 1) frameId = requestAnimationFrame(tick);
+    }
+    frameId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frameId);
+  }, [games, playableGamesPercentage]);
   return (
     <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-6xl flex-col px-4 py-8">
       <Header current="check" />
@@ -158,7 +179,7 @@ export default function Check() {
                       : "text-celadon"
                 }`}
               >
-                {playableGamesPercentage.toFixed(1)}%
+                <span ref={pctRef} />
               </p>
               <p className="mt-1 text-sm text-muted">
                 of {gamesCount} game{gamesCount !== 1 ? "s" : ""} are playable

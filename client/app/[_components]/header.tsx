@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import AnimatedNavLink from "./animatedNavLink";
 
 type Props = {
   current: "check" | "why";
@@ -21,26 +22,8 @@ export default function Header({ current }: Props) {
           </span>
         </Link>
         <nav className="flex gap-6">
-          <Link
-            href="/"
-            className={`border-b-2 pb-0.5 text-sm font-medium transition ${
-              current === "why"
-                ? "border-ink text-ink"
-                : "border-transparent text-muted hover:text-ink"
-            }`}
-          >
-            why ?
-          </Link>
-          <Link
-            href="/check"
-            className={`border-b-2 pb-0.5 text-sm font-medium transition ${
-              current === "check"
-                ? "border-ink text-ink"
-                : "border-transparent text-muted hover:text-ink"
-            }`}
-          >
-            check
-          </Link>
+          <AnimatedNavLink href="/" label="why ?" isActive={current === "why"} />
+          <AnimatedNavLink href="/check" label="check" isActive={current === "check"} />
         </nav>
       </div>
     </header>
