@@ -19,17 +19,25 @@ const badgeStyles: Record<string, string> = {
   borked: "bg-red-500 text-white",
 };
 
-function TierBadge({ tier, isNative }: { tier: string | null; isNative: boolean | null }) {
+function TierBadge({
+  tier,
+  isNative,
+}: {
+  tier: string | null;
+  isNative: boolean | null;
+}) {
   if (isNative) {
     return (
-      <span className={`px-2 py-0.5 text-xs font-semibold ${badgeStyles.native}`}>
+      <span
+        className={`px-2 py-0.5 text-xs font-semibold ${badgeStyles.native}`}
+      >
         Native
       </span>
     );
   }
 
   const cls = tier
-    ? badgeStyles[tier] ?? "bg-muted text-alice"
+    ? (badgeStyles[tier] ?? "bg-muted text-alice")
     : "bg-muted text-alice";
 
   return (
@@ -49,7 +57,7 @@ export default function Game({ game }: { game: GameData }) {
       rel="noopener noreferrer"
       className="block border-2 border-muted bg-white transition hover:-translate-y-0.5 hover:border-celadon hover:shadow-md"
     >
-      <div className="relative aspect-[460/215] bg-alice">
+      <div className="relative aspect-460/215 bg-alice">
         {imgError ? (
           <div className="flex h-full items-center justify-center bg-muted/20">
             <span className="text-3xl font-bold tracking-tight text-muted">
@@ -68,9 +76,7 @@ export default function Game({ game }: { game: GameData }) {
         )}
       </div>
       <div className="space-y-1.5 border-t-2 border-muted p-3">
-        <h3 className="truncate text-sm font-semibold text-ink">
-          {game.name}
-        </h3>
+        <h3 className="truncate text-sm font-semibold text-ink">{game.name}</h3>
         <div className="flex items-center gap-2">
           <TierBadge tier={game.tier} isNative={game.isNative} />
         </div>

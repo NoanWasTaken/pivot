@@ -26,7 +26,7 @@ const distros = [
     color: "bg-pine",
     textColor: "text-alice",
     best: "Gamers with NVIDIA GPUs, laptop users, developer–gamers",
-    desc: "Ubuntu-based with dedicated NVIDIA ISO, hybrid GPU switching that actually works, and the new Rust-based COSMIC desktop. A general-purpose distro that takes gaming seriously — perfect if you game and work on the same machine.",
+    desc: "Ubuntu-based with dedicated NVIDIA ISO, hybrid GPU switching that actually works, and the new Rust-based COSMIC desktop. A general-purpose distro that takes gaming seriously - perfect if you game and work on the same machine.",
     badges: {
       difficulty: "Beginner–Intermediate",
       base: "Ubuntu",
@@ -56,7 +56,7 @@ const distros = [
     color: "bg-pine",
     textColor: "text-alice",
     best: "Gamers who want Fedora without immutability, curated tweaks",
-    desc: "Fedora-based distro maintained by GloriousEggroll — the lead Proton developer at Valve. Comes with proton patches, Wine fixes, and gaming tools pre-configured. Less locked-down than Bazzite, more gaming-focused than Fedora stock.",
+    desc: "Fedora-based distro maintained by GloriousEggroll - the lead Proton developer at Valve. Comes with proton patches, Wine fixes, and gaming tools pre-configured. Less locked-down than Bazzite, more gaming-focused than Fedora stock.",
     badges: {
       difficulty: "Intermediate",
       base: "Fedora",
@@ -82,7 +82,7 @@ const distros = [
     color: "bg-pine",
     textColor: "text-alice",
     best: "Developers and tinkerers who value reproducibility",
-    desc: "The entire OS is defined in a single config file. Atomic updates, instant rollbacks, and nearly impossible to break once set up. A different philosophy — steep learning curve but unmatched reliability once it clicks.",
+    desc: "The entire OS is defined in a single config file. Atomic updates, instant rollbacks, and nearly impossible to break once set up. A different philosophy - steep learning curve but unmatched reliability once it clicks.",
     badges: {
       difficulty: "Advanced",
       base: "Independent",
@@ -161,7 +161,7 @@ export default function Home() {
               <strong className="text-ink">
                 <u>bloatware</u>
               </strong>{" "}
-              — pre-installed apps, background services,{" "}
+              - pre-installed apps, background services,{" "}
               <strong className="text-ink">
                 <u>telemetry</u>
               </strong>
@@ -224,7 +224,7 @@ export default function Home() {
                 <u>Steam Proton</u>
               </strong>{" "}
               (built into Steam Play), thousands of Windows games now run
-              seamlessly on Linux — often with{" "}
+              seamlessly on Linux - often with{" "}
               <strong className="text-ink">
                 <u>equal or better performance</u>
               </strong>{" "}
@@ -256,7 +256,7 @@ export default function Home() {
             Which Linux distribution to choose
           </h2>
           <p className="mb-6 text-sm text-muted">
-            There&apos;s no single best distro — the right one depends on your
+            There&apos;s no single best distro - the right one depends on your
             hardware, your experience level, and what you want to do.
             Here&apos;s a breakdown of the strongest options in 2026.
           </p>
@@ -276,7 +276,7 @@ export default function Home() {
               Create a USB stick with your chosen distro using{" "}
               <strong className="text-ink">Ventoy</strong>,{" "}
               <strong className="text-ink">Rufus</strong> or{" "}
-              <strong className="text-ink">balenaEtcher</strong>. Boot from it —
+              <strong className="text-ink">balenaEtcher</strong>. Boot from it -
               most distros let you try the live environment without installing
               anything.
             </p>
