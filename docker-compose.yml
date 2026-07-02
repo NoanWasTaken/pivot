@@ -7,9 +7,14 @@ services:
       - web
     environment:
       PORT: 3001
+      STEAM_API_KEY: ${STEAM_API_KEY}
+      CORS_ORIGIN: ${CORS_ORIGIN}
 
   web:
-    build: ./client
+    build:
+      context: ./client
+      args:
+        NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}
     container_name: pivot-web
     restart: unless-stopped
     networks:

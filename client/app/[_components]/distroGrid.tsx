@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import { useFadeInOnScroll } from "../[_hooks]/useFadeInOnScroll";
 import { useStaggerIn } from "../[_hooks]/useStaggerIn";
